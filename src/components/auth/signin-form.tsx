@@ -9,9 +9,25 @@ export const SigninForm = () => {
   const [emailField, setEmailField] = useState('');
   const [passwordField, setPasswordField] = useState('');
 
+  const handleEnterButton = () => {
+    router.replace('/home');
+  }
+
   return (
     <>
-      <input placeholder="Digite seu e-mail"/>
+      <input 
+        placeholder="Digite seu e-mail"
+        value={emailField}
+        onChange={e => setEmailField(e.target.value)}
+      />
+      <input 
+        placeholder="Digite sua senha"
+        value={passwordField}
+        onChange={e => setPasswordField(e.target.value)}
+      />
+
+      <button onClick={handleEnterButton}>Entrar</button>
+
     </>
   );
 }
